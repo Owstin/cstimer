@@ -745,7 +745,7 @@ var kernel = (function() {
 				return;
 			}
 			var compExpString = LZString.compressToEncodedURIComponent(expString);
-			$.post('https://cstimer.herokuapp.com/userdata.php', {'id': id, 'data': compExpString}, function(val) {
+			$.post('https://young-scrubland-36557.herokuapp.com/adduser', {'id': id, 'data': compExpString}, function(val) {
 				if (val["retcode"] == 0) {
 					alert(EXPORT_UPLOADED);
 				} else {
@@ -763,7 +763,7 @@ var kernel = (function() {
 				alert(EXPORT_INVID);
 				return;
 			}
-			$.post('https://cstimer.herokuapp.com/userdata.php', {'id': id}, function(val) {
+			$.post('https://young-scrubland-36557.herokuapp.com/user', {'id': id}, function(val) {
 				var retcode = val["retcode"];
 				if (retcode == 0) {
 					loadData(LZString.decompressFromEncodedURIComponent(val["data"]));
